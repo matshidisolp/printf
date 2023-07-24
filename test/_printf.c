@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
   *_printf- Produces output according to a format
   *@format: a character string
@@ -8,8 +9,8 @@
 int _printf(const char *format, ...)
 {
 	int printed_char = 0;
-	char *str;
 	va_list args;
+	char *str;
 
 	va_start(args, format);
 	while (*format)
@@ -42,12 +43,12 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else
-		{
-			printed_char += _putchar(*format);
+			else
+			{
+				printed_char += _putchar(*format);
+			}
+			format++;
 		}
-		format++;
-	}
-	va_end(args);
-	return (printed_char);
+		va_end(args);
+		return (printed_char);
 }
