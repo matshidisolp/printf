@@ -11,10 +11,6 @@ int print_char(va_list types, char buffer[])
 {
 	char c = va_arg(types, int);
 
-	// Handle the character writting to the buffer
 	buffer[0] = c;
-	return (1); // Return 1 for a single character printed
+	return (1);
 }
-
-/*********PRINT AN INTEGER********/
-
