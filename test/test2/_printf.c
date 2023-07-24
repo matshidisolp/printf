@@ -2,17 +2,21 @@
 /**
   *_printf- Produces output according to a format
   *@format: a character string
-  *
   *Return: number of characters printed excl. null to end string
   */
 int _printf(const char *format, ...)
 {
-	int printed_char = 0;
+	int  printed_char = 0;
 	char *str;
 	va_list args;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
+
 	va_start(args, format);
-	while (*format)
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{

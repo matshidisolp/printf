@@ -1,14 +1,12 @@
 #include "main.h"
 /**
-  *_printf- Produces output according to a format
-  *@format: a character string
-  *
-  *Return: number of characters printed excl. null to end string
-  */
+ *_printf- Produces output according to a format
+ *@format: a character string
+ *Return: number of characters printed excl. null to end string
+ */
 int _printf(const char *format, ...)
 {
 	int printed_char = 0;
-	char *str;
 	va_list args;
 
 	va_start(args, format);
@@ -19,27 +17,18 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-			switch (*format)
+			if (*format == 'c')
+				printed_char += _putchar(va_arg(args, int));
+			else if (*format == 's')
 			{
-				case 'c':
-					printed_char += _putchar(va_arg(args, int));
-					break;
-				case 's':
-					*str = va_arg(args, int);
+				char *str = va_arg(args, char*);
 
-					while (*str)
-					{
-						printed_char += _putchar(*str);
-						str++;
-					}
-					break;
-				case '%':
-					printed_char += _putchar('%');
-					break;
-				default:
-					printed_char += _putchar('%');
-					printed_char += _putchar(*format);
-					break;
+				while (*str)
+					printed_char += _putchar(*str++);
+			}
+			else
+			{
+				printed_char += _putchar(*format);
 			}
 		}
 		else
