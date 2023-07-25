@@ -10,15 +10,26 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
-	while (*format && printed_char >= 0)
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == '\0')
 				break;
-			printed_char += handle_format(*format, args);
+			if (*format == 'c')
+				printed_char += _putchar(va_arg(args, int));
+			else if (*format == 's')
+			{
+				char *str = va_arg(args, char*);
+
+				while (*str)
+					printed_char += _putchar(*str++);
+			}
+			else
+			{
+				printed_char += _putchar(*format);
+			}
 		}
 		else
 		{
@@ -27,5 +38,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return (printed_char >= 0 ? printed_char : -1);
+	return (printed_char);
 }
