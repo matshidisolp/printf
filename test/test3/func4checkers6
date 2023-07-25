@@ -42,11 +42,11 @@ int print_str(char *str)
 */
 int print_percent(va_list types, char buffer[], int width, int flag, int size, int precision)
 {
-UNUSE(types)
-UNUSE(buffer)
-UNUSE(width)
-UNUSE(flag)
-UNUSE(size)
-UNUSE(precision)
+UNUSED(types);
+UNUSED(buffer);
+UNUSED(width);
+UNUSED(flag);
+UNUSED(size);
+UNUSED(precision);
 return(write(1, "%%", 1));
 }
