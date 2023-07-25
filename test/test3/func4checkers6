@@ -30,23 +30,5 @@ int print_str(char *str)
 		while (*str)
 			printed_char += _putchar(*str++);
 	}
-	return (printed_char);
-}
-/*************************PRINT A PERCENT SIGN*************************/
-/**
-* print_percent - Print percent sign
-* @types : List of argument (va_list)
-* @buffer : Buffer array
-*
-*Return : Numbers of char sign printed
-*/
-int print_percent(va_list types, char buffer[], int width, int flag, int size, int precision)
-{
-UNUSED(types);
-UNUSED(buffer);
-UNUSED(width);
-UNUSED(flag);
-UNUSED(size);
-UNUSED(precision);
-return(write(1, "%%", 1));
+	return (printed_char)
 }
