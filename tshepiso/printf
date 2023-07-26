@@ -1,18 +1,1 @@
-/*************************PRINT A PERCENT SIGN*************************/
-/**
-* print_percent - Print percent sign
-* @types : List of argument (va_list)
-* @buffer : Buffer array
-*
-*Return : Numbers of char sign printed
-*/
-int print_percent(va_list types, char buffer[], int width, int flag, int size, int precision)
-{
-UNUSE(types)
-UNUSE(buffer)
-UNUSE(width)
-UNUSE(flag)
-UNUSE(size)
-UNUSE(precision)
-return (1)
-}
+
