@@ -6,9 +6,6 @@
  */
 int _printf(const char *format, ...)
 {
-	if (!format)
-		return (-1);
-
 	int printed_char = 0;
 	va_list args;
 
