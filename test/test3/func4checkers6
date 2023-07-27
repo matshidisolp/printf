@@ -32,3 +32,24 @@ int print_str(char *str)
 	}
 	return (printed_char)
 }
+
+/****************** PRINT THE POINTER ******************/
+/**
+ *The function that will handle the %p conversion specifier
+ *Result stored in buffer
+ *Returns - String representing the memory address 
+ */
+const char*handle_p_specifier (const void* ptr)
+{
+static char buffer[28]; 
+sprintf(buffer, "%p", ptr);
+return buffer;
+}
+int main()
+{
+int number = 44;
+int* ptr = &number;
+printf("Memory address of ptr: %s\b", handle_p_specifier(ptr));
+printf("Memory address of number: %s\b", handle_p_specifier(&number));
+return (0);
+}
